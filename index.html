@@ -53,19 +53,34 @@
         <!-- 1. navbar section ends  -->
         <!-- 2. news categories starts  -->
         <section class="container my-4">
-            <div id="categories-container" class="btn-group" role="group"
-                aria-label="Basic checkbox toggle button group">
+            <div id="categories-container" class="btn-group d-flex flex-lg-row flex-sm-column flex-md-row flex-column"
+                role="group" aria-label="Basic checkbox toggle button group">
             </div>
             <div class="mt-4 bg-white px-4 py-4 mx-3 container-fluid">
-                <h4 id="categories-status">0 Items Found!</h4>
+                <h4 id="items-per-category"> 0 Items Found</h4>
             </div>
         </section>
         <!-- 2. news categories ends -->
         <!-- 3.sort by section starts  -->
-        <section>
+        <section
+            class="container d-flex flex-lg-row flex-column flex-sm-column justify-content-between align-items-center ps-5">
+            <div class="d-flex flex-columns align-items-center mt-3">
+                <h5>Sort by Views:</h5>
+                <input type="text" name="" value="" class="border-0 ms-3 px-4" placeholder="Default"
+                    style="max-width: 30%;">
+            </div>
+            <div class="d-flex flex-columns align-items-center mt-3">
+                <button class="btn btn-outline-danger px-4 rounded-1 me-2 text-nowrap">Today's Pick</button>
+                <button class="btn btn-outline-danger px-4 rounded-1 ">Trending</button>
+            </div>
 
         </section>
         <!-- 3.sort by section ends -->
+        <!-- 4.new section starts  -->
+        <section>
+
+        </section>
+        <!-- 4.new section ends  -->
 
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
