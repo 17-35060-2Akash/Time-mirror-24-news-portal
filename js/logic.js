@@ -32,6 +32,9 @@ const loadCategoryNews = async (categoryId, categoryName) => {
     //fetching all news inside a category by category id
     //start spinner loader
     toggleLoader(true);
+    //hide accordiom when new loads
+    const blogsContainer = document.getElementById('blogs-container');
+    blogsContainer.classList.add('d-none');
     const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`;
     try {
         const response = await fetch(url);
@@ -185,6 +188,23 @@ const toggleLoader = (isLoading) => {
         spinner.classList.add('d-none');
     }
 }
+
+
+//blog button 
+document.getElementById('blog-btn').addEventListener('click', function (event) {
+    document.getElementById('all-news-container').textContent = ``;
+    document.getElementById('found-items-panel').classList.add('d-none');
+    document.getElementById('sort-by-panel').classList.add('d-none');
+
+    const blogsContainer = document.getElementById('blogs-container');
+    blogsContainer.classList.remove('d-none');
+});
+
+//news-btn
+document.getElementById('news-btn').addEventListener('click', function (event) {
+    const blogsContainer = document.getElementById('blogs-container');
+    blogsContainer.classList.add('d-none');
+});
 
 
 
