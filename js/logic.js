@@ -58,10 +58,13 @@ const displayCategoryNews = (data, categoryName) => {
     const itemsPerCategory = document.getElementById('items-per-category');
     itemsPerCategory.textContent = `${data.length} items found for category ${categoryName} `;
     data = data.slice(0, 30);
+    //sorting the news array as per total views
+    sortedData = data.sort((a, b) => b.total_view - a.total_view);
+    // console.log(sortedData);
 
     const allNewsConatiner = document.getElementById('all-news-container');
     allNewsConatiner.textContent = ``;
-    data.forEach(news => {
+    sortedData.forEach(news => {
         // console.log(news);
 
         const newsDiv = document.createElement('div');
@@ -133,7 +136,7 @@ const loadNewsDetail = async (news_id) => {
 }
 
 const displayNewsDetailsOnModal = (data) => {
-    console.log(data);
+    // console.log(data);
     const newsDetailsContainer = document.getElementById('news-details-container');
     newsDetailsContainer.textContent = ``;
     const detailsDiv = document.createElement('div');
@@ -206,6 +209,20 @@ document.getElementById('news-btn').addEventListener('click', function (event) {
     blogsContainer.classList.add('d-none');
 });
 
+
+//sort by views menu starts
+const loadByMenuOptions = (btnName) => {
+    const dropDownMenu = document.getElementById('drop-down-menu');
+    if (btnName === 'Default') {
+        dropDownMenu.innerHTML = 'Default';
+    }
+    else if (btnName === 'Views (Low-High)') {
+        dropDownMenu.innerHTML = 'Views (Low-High)';
+    }
+    else {
+        dropDownMenu.innerHTML = 'Views (High-Low)';
+    }
+}
 
 
 

@@ -72,8 +72,26 @@
             class="container d-flex flex-lg-row flex-column flex-sm-column justify-content-between align-items-center d-none">
             <div class="d-flex flex-columns align-items-center mt-3">
                 <h5>Sort by Views:</h5>
-                <input type="text" name="" value="" class="border-0 ms-3 px-4" placeholder="Default"
-                    style="max-width: 30%;">
+                <!-- <input type="text" name="" value="" class="border-0 ms-3 px-4" placeholder="Default"
+                    style="max-width: 30%;"> -->
+                <div class="dropdown">
+                    <button id="drop-down-menu"
+                        class="btn btn-secondary dropdown-toggle border-0 ms-2 px-4 bg-white text-dark fw-semibold text-muted"
+                        type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 85%;">
+                        Default
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li onclick="loadByMenuOptions('Default')"><a class="dropdown-item active" href="#">Default</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li onclick="loadByMenuOptions('Views (Low-High)')"><a class="dropdown-item" href="#">Views
+                                (Low-High)</a></li>
+                        <li onclick="loadByMenuOptions('Views (High-Low)')"><a class="dropdown-item" href="#">Views
+                                (High-Low)</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="d-flex flex-columns align-items-center mt-3">
                 <button class="btn btn-outline-danger px-4 rounded-1 me-2 text-nowrap">Today's Pick</button>
@@ -199,7 +217,7 @@
                                     You don't have to use the plus operator.
                                 </div>
                                 <div>
-                                    <img class="img-fluid w-50" src="images/csssbox.png" alt="">
+                                    <!-- <img class="img-fluid w-50" src="images/csssbox.png" alt=""> -->
                                 </div>
                             </div>
                         </div>
