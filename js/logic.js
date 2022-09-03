@@ -43,6 +43,12 @@ const loadCategoryNews = async (categoryId, categoryName) => {
 
 const displayCategoryNews = (data, categoryName) => {
     // console.log(data);
+    const foundItemsPanel = document.getElementById('found-items-panel');
+    const sortByPanel = document.getElementById('sort-by-panel');
+    if (data && categoryName) {
+        foundItemsPanel.classList.remove('d-none');
+        sortByPanel.classList.remove('d-none');
+    }
     // setting number of items/news per category 
     const itemsPerCategory = document.getElementById('items-per-category');
     itemsPerCategory.textContent = `${data.length} items found for category ${categoryName} `;
