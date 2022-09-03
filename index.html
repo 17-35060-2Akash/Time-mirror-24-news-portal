@@ -116,14 +116,32 @@
                         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
                             aria-labelledby="panelsStayOpen-headingOne">
                             <div class="accordion-body">
-                                <strong>Grid</strong> is made for two-dimensional layout while <strong>Flexbox</strong>
-                                is for one. This means
-                                Flexbox can work on either row or columns at a time, but Grids can work on both.
-                                When working on either element (row or column), you are most associated with the
-                                content.
+                                One of the features that came with <strong class="text-success">ES6</strong> is the
+                                addition of <strong>let</strong> and <strong>const</strong>, which can be used for
+                                variable declaration. Where <strong>var</strong>
+                                was used instead in the earlier times.
                                 <br><br>
-                                Of course CSS grid and flexbox can work together in a layout. You can use flexbox inside
-                                CSS grid and vice versa.
+                                <strong class="text-primary fs-5">var</strong><br>
+                                Before the advent of ES6, var declarations ruled. There are issues associated with
+                                variables declared with var, though.
+                                That is why it was necessary for new ways to declare variables to emerge. var is
+                                function scoped. Sometimes it can be used before when it comes to line by line execution
+                                rule in JS
+                                and arises confusion.var allows to redeclare variables.
+                                Hoisting occurs in var.
+
+                                <br><br>
+                                <strong class="text-primary fs-5">let</strong><br>
+                                let is now preferred for variable declaration.
+                                With let we can re-assign variables whereever needed. Let is block specific. let does
+                                not allow to redeclare variables.
+                                Hoisting does not occur in let.
+                                <br><br>
+                                <strong class="text-primary fs-5">const</strong><br>
+                                Variables declared with the const maintain constant values.
+                                const declarations share some similarities with let declarations.Like let declarations,
+                                const declarations can only be accessed within the block they were declared.
+
                             </div>
                         </div>
                     </div>
@@ -138,15 +156,17 @@
                         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
                             aria-labelledby="panelsStayOpen-headingTwo">
                             <div class="accordion-body">
-                                <strong>Bootstrap vs Tailwind CSS </strong><br>
-                                Bootstrap comes with a set of pre-styled responsive, mobile-first components
-                                that possess a definite UI kit. Tailwind CSS uses a set of utility classes to create
-                                a neat UI with more flexibility and uniqueness. Sites created using Bootstrap follow
-                                the generic pattern that makes them look identical.
+                                <strong class="text-success">Arrow Functions vs Regular Functions </strong><br>
+                                An arrow function doesn't have its own this value and the arguments object.
+                                Therefore, you should not use it as an event handler, a method of an object literal,
+                                a prototype method, or when you have a function that uses the arguments object.
                                 <br><br>
-                                Bootstrap is the most popular HTML, CSS, and JavaScript framework for building
-                                responsive, mobile-first projects on the web. Tailwind CSS, on the other hand, is
-                                the most popular utility-first CSS framework for fast UI development.
+                                There are two major benefits of using Arrow functions. One is that it's a
+                                <strong>shorter syntax
+                                    and thus requires less code.</strong>
+                                The main benefit is that it removes the several pain points associated with the this
+                                operator. But Arrow functions cannot be used as <strong>constructors</strong>.
+                                They cannot be called with the new keyword.
                             </div>
                         </div>
                     </div>
@@ -155,7 +175,7 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                                 aria-controls="panelsStayOpen-collapseThree">
-                                3. Why to use templete string?
+                                3. Why to use template string?
                             </button>
                         </h2>
                         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
@@ -163,11 +183,20 @@
                             <div
                                 class="accordion-body d-flex justify-content-between align-items-center flex-column flex-md-row flex-lg-row">
                                 <div>
-                                    <strong>The CSS Box Model</strong> <br><br>
-
-                                    In CSS, the term "box model" is used when talking about design and layout. The CSS
-                                    box model is essentially a box that wraps around every HTML element. It consists of:
-                                    margins, borders, padding, and the actual content.
+                                    <strong class="text-success">Template strings in Javascript</strong> <br><br>
+                                    Template strings are a powerful feature of modern JavaScript released in <strong
+                                        class="text-success">ES6</strong>.
+                                    <strong>Template literals</strong> provide an easy way to interpolate variables and
+                                    expressions into strings.
+                                    The method is called string interpolation. This is only available in Javascript. It
+                                    allows us to create strings that are complex and contain dynamic elements.
+                                    <br><br>
+                                    This actually makes the strings to be dynamic and be written in a soothing wasy to
+                                    understand. Using the template literal for the HTML is definitely more readable by
+                                    reducing the annoyance. <strong>Your string can span multiple lines.</strong> You
+                                    don't have to
+                                    escape quotation characters.
+                                    You don't have to use the plus operator.
                                 </div>
                                 <div>
                                     <img class="img-fluid w-50" src="images/csssbox.png" alt="">
