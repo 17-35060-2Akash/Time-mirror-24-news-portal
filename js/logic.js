@@ -72,14 +72,14 @@ const displayCategoryNews = (data, categoryName) => {
 
         newsDiv.innerHTML = `
             <div class="row g-0">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 ">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                     <img src="${news.thumbnail_url}" class="img-fluid rounded-1 thumbnail-image" alt="...">
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8 d-flex justify-content-center align-items-center pe-5 news-card">
                     <div class="card-body">
                         <div class="news-paragraph">
-                            <h5 class="card-title mb-4 fw-bolder">${news.title}</h5>
+                            <h5 class="card-title mb-4 fw-bolder mt-3">${news.title}</h5>
                             <p class="card-text fs-6 text-muted">${news.details.slice(0, 320) + '...'}</p>
                         </div>
                         <div class="news-details card-footer border-0 bg-white px-0 mt-4 d-flex flex-column flex-sm-column flex-md-column flex-lg-row  justify-content-center align-items-center">
