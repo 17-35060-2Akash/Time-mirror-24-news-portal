@@ -24,15 +24,20 @@
     }
 
 
-
     .news-details {
         font-size: 2vw;
         margin-left: 45px;
     }
 }
 
-/* @media screen and (min-width: 577px) and(max-width: 992px) {
+/* @media screen and (min-width: 577px) and (max-width: 768px) {
     .thumbnail-image {
-        text-align: center;
+        margin-left: 110px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .news-card {
+        margin-left: -40px;
     }
 } */
