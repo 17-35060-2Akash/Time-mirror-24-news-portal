@@ -18,7 +18,7 @@ const displayCategories = (categories) => {
     categories.forEach(category => {
         // console.log(category);
         const categoryDiv = document.createElement('div');
-        categoryDiv.classList.add('col');
+        // categoryDiv.classList.add('col');
         categoryDiv.innerHTML = `
         <button onclick="loadCategoryNews('${category.category_id}','${category.category_name}')" 
         class=" btn btn-outline-danger border-0 text-nowrap fw-semibold" >${category.category_name}</button>
@@ -72,41 +72,50 @@ const displayCategoryNews = (data, categoryName) => {
 
         newsDiv.innerHTML = `
             <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="${news.thumbnail_url}" class="img-fluid rounded-start rounded-1" alt="...">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 ">
+                    <img src="${news.thumbnail_url}" class="img-fluid rounded-1 thumbnail-image" alt="...">
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title mb-4 fw-bolder">${news.title}</h5>
-                        <p class="card-text fs-6 text-muted">${news.details.slice(0, 320) + '...'}</p>
-                        <div class="card-footer border-0 bg-white px-0 mt-4 d-flex justify-content-center align-items-center">
 
-                            <div class="d-flex flex-row align-items-center">
-                                <img class="img-fluid rounded-5" src="${news.author.img}" alt="" style="width:13%">
-                                <div class="ms-2 mt-2">
-                                <h6 class="text-primary fw-bolder" style="font-size: 80%">${news.author.name ? news.author.name : "No Data Available"}</h6>
-                                <h6 style="font-size: 80%" class="text-muted">${news.author.published_date ? news.author.published_date : "No Data Available"}</h6>
+                <div class="col-12 col-sm-12 col-md-8 col-lg-8 d-flex justify-content-center align-items-center pe-5 news-card">
+                    <div class="card-body">
+                        <div class="news-paragraph">
+                            <h5 class="card-title mb-4 fw-bolder">${news.title}</h5>
+                            <p class="card-text fs-6 text-muted">${news.details.slice(0, 320) + '...'}</p>
+                        </div>
+                        <div class="news-details card-footer border-0 bg-white px-0 mt-4 d-flex flex-column flex-sm-column flex-md-column flex-lg-row  justify-content-center align-items-center">
+
+                            <div class="d-flex flex-row justify-content-start align-items-center mt-2">
+                                <div class="d-flex flex-row  align-items-center">
+                                    <img class="img-fluid rounded-5" src="${news.author.img}" alt="" style="width:15%">
+                                    <div class="ms-2 mt-2">
+                                        <h6 class="text-primary fw-bolder" style="font-size: 80%">${news.author.name ? news.author.name : "No Data Available"}</h6>
+                                        <h6 style="font-size: 80%" class="text-muted">${news.author.published_date ? news.author.published_date : "No Data Available"}</h6>
+                                    </div>
                                 </div>
                             </div>
+
+
+                            <div class="d-flex flex-row justify-content-start align-items-center mt-4 " >
+                                <div class="d-flex flex-row me-5 mt-2 justify-content-center align-items-center">
+                                    <h6><i class="fa-solid fa-eye me-1"></i></h6>
+                                    <h6 style="font-size: 90%"> ${news.total_view ? news.total_view + 'M' : "No Data Available"}</h6>
+                                </div>
+                                <div class="d-flex ms-4 me-5">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+
+                                <div class="d-flex ms-5">
+                                    <button onclick="loadNewsDetail('${news._id}')" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#newsModal">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
                             
-                            <div class="d-flex flex-row me-5 mt-2 align-items-center">
-                            <h6><i class="fa-solid fa-eye me-1"></i></h6>
-                            <h6 style="font-size: 90%"> ${news.total_view ? news.total_view + 'M' : "No Data Available"}</h6>
-                            </div>
-
-                            <div class="d-flex  me-5">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            </div>
-
-                            <div class="d-flex">
-                            <button onclick="loadNewsDetail('${news._id}')" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#newsModal">
-                               <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                            </div>
                         
                             
                         </div>
@@ -140,6 +149,7 @@ const displayNewsDetailsOnModal = (data) => {
     const newsDetailsContainer = document.getElementById('news-details-container');
     newsDetailsContainer.textContent = ``;
     const detailsDiv = document.createElement('div');
+    // toggleLoader(true);
     detailsDiv.innerHTML = `
     <div class="card h-100 border-0">
       <img src="${data.image_url}" class="card-img-top" alt="...">
@@ -180,6 +190,8 @@ const displayNewsDetailsOnModal = (data) => {
     </div>
     `;
     newsDetailsContainer.appendChild(detailsDiv);
+    // toggleLoader(false);
+
 }
 
 const toggleLoader = (isLoading) => {
